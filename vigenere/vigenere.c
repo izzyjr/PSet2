@@ -6,11 +6,11 @@
 
 int main(int argc, string argv[])
 {
-    if(argc == 2)
+    if (argc == 2)
     {
-        for(int i = 0; i < strlen(argv[1]); i++)
+        for (int i = 0; i < strlen(argv[1]); i++)
         {
-            if(isalpha(argv[1][i]) == false)
+            if (isalpha(argv[1][i]) == false)
             {
                 printf("Usage: ./vigenere k \n");
                 return 1;
@@ -28,15 +28,15 @@ int main(int argc, string argv[])
     printf("ciphertext: ");
     int count = -1;
 
-    for(int i = 0; i < strlen(p); i++)
+    for (int i = 0; i < strlen(p); i++)
     {
-        if(isalpha(p[i]))
+        if (isalpha(p[i]))
         {
             count++;
             int j = count % strlen(k);
-            if(isupper(p[i]))
+            if (isupper(p[i]))
             {
-                if(isupper(k[j]))
+                if (isupper(k[j]))
                 {
                     printf("%c", ((p[i] + k[j]) % 26) + 65);
                 }
@@ -45,11 +45,11 @@ int main(int argc, string argv[])
                     printf("%c", ((p[i] + (k[j] - 32)) % 26) + 65);
                 }
             }
-            else if(islower(p[i]))
+            else if (islower(p[i]))
             {
-                if(islower(k[j]))
+                if (islower(k[j]))
                 {
-                    if(((p[i] + k[j]) % 26) + 85 < 97)
+                    if (((p[i] + k[j]) % 26) + 85 < 97)
                     {
                         printf("%c", ((p[i] + k[j]) % 26) + 111);
                     }
@@ -60,7 +60,7 @@ int main(int argc, string argv[])
                 }
                 else
                 {
-                    if(((p[i] + k[j]) % 26) + 85 < 97)
+                    if (((p[i] + k[j]) % 26) + 85 < 97)
                     {
                         printf("%c", ((p[i] + (k[j] + 32)) % 26) + 111);
                     }

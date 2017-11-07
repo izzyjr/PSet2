@@ -6,15 +6,15 @@
 int main(void)
 {
     string name = get_string();
-    if(name != NULL)
+    if (name != NULL)
     {
-        for(int i = 0, length = strlen(name); i < length; i++)
+        for (int i = 0, length = strlen(name); i < length; i++)
         {
-            if(i == 0)
+            if (i == 0)
             {
                 printf("%c", toupper(name[i]));
             }
-            else if(name[i] == 32)
+            else if (name[i] == 32)
             {
                 printf("%c", toupper(name[i + 1]));
             }
